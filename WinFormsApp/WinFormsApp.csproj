@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <Nullable>annotations</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <TargetFramework>net6.0-windows</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="WindowsBase">
+            <HintPath>..\..\..\..\..\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\6.0.5\WindowsBase.dll</HintPath>
+        </Reference>
+        <Reference Include="WindowsFormsIntegration">
+            <HintPath>..\..\..\..\..\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\6.0.5\WindowsFormsIntegration.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\BookshelfDB\BookshelfDB.csproj"/>
+        <ProjectReference Include="..\SuggestionBox\SuggestionBox.csproj"/>
+        <ProjectReference Include="..\ViewModels\ViewModels.csproj"/>
+    </ItemGroup>
+
+</Project>

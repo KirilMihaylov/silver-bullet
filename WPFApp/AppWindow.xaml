@@ -1,0 +1,560 @@
+﻿<Window x:Name="ThisWindow"
+        x:Class="WPFApp.AppWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:suggestionBoxLib="clr-namespace:SuggestionBoxLib;assembly=SuggestionBox"
+        xmlns:viewModelsLib="clr-namespace:ViewModelsLib;assembly=ViewModels"
+        mc:Ignorable="d">
+    <Window.DataContext>
+        <Binding>
+            <Binding.ElementName>
+                ThisWindow
+            </Binding.ElementName>
+            <Binding.Path>
+                ViewModel
+            </Binding.Path>
+            <Binding.Mode>
+                OneTime
+            </Binding.Mode>
+        </Binding>
+    </Window.DataContext>
+    <Window.Title>
+        WPF App
+    </Window.Title>
+    <Window.MinHeight>
+        480
+    </Window.MinHeight>
+    <Window.MinWidth>
+        640
+    </Window.MinWidth>
+    <Window.Height>
+        480
+    </Window.Height>
+    <Window.Width>
+        640
+    </Window.Width>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.Row>
+                1
+            </Grid.Row>
+            <Button>
+                <Grid.Column>
+                    1
+                </Grid.Column>
+                <Grid.ColumnSpan>
+                    3
+                </Grid.ColumnSpan>
+                <Button.Command>
+                    <Binding>
+                        <Binding.ElementName>
+                            ThisWindow
+                        </Binding.ElementName>
+                        <Binding.Path>
+                            ChangeViewModelCommand
+                        </Binding.Path>
+                    </Binding>
+                </Button.Command>
+                <Button.CommandParameter>
+                    <viewModelsLib:BooksVm />
+                </Button.CommandParameter>
+                <Button.Content>
+                    Books
+                </Button.Content>
+            </Button>
+            <Button>
+                <Grid.Column>
+                    5
+                </Grid.Column>
+                <Grid.ColumnSpan>
+                    3
+                </Grid.ColumnSpan>
+                <Button.Command>
+                    <Binding>
+                        <Binding.ElementName>
+                            ThisWindow
+                        </Binding.ElementName>
+                        <Binding.Path>
+                            ChangeViewModelCommand
+                        </Binding.Path>
+                    </Binding>
+                </Button.Command>
+                <Button.CommandParameter>
+                    <viewModelsLib:MagazinesVm />
+                </Button.CommandParameter>
+                <Button.Content>
+                    Magazines
+                </Button.Content>
+            </Button>
+            <Button>
+                <Grid.Column>
+                    9
+                </Grid.Column>
+                <Grid.ColumnSpan>
+                    3
+                </Grid.ColumnSpan>
+                <Button.Command>
+                    <Binding>
+                        <Binding.ElementName>
+                            ThisWindow
+                        </Binding.ElementName>
+                        <Binding.Path>
+                            ChangeViewModelCommand
+                        </Binding.Path>
+                    </Binding>
+                </Button.Command>
+                <Button.CommandParameter>
+                    <viewModelsLib:ComicsVm />
+                </Button.CommandParameter>
+                <Button.Content>
+                    Comics
+                </Button.Content>
+            </Button>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.Row>
+                3
+            </Grid.Row>
+            <ComboBox x:Name="VariableSelector">
+                <Grid.Column>
+                    1
+                </Grid.Column>
+                <Grid.ColumnSpan>
+                    7
+                </Grid.ColumnSpan>
+                <ComboBox.VerticalContentAlignment>
+                    Center
+                </ComboBox.VerticalContentAlignment>
+                <ComboBox.ItemsSource>
+                    <Binding>
+                        <Binding.ElementName>
+                            ThisWindow
+                        </Binding.ElementName>
+                        <Binding.Path>
+                            ViewModel.Variables
+                        </Binding.Path>
+                        <Binding.Mode>
+                            OneWay
+                        </Binding.Mode>
+                    </Binding>
+                </ComboBox.ItemsSource>
+                <ComboBox.SelectedItem>
+                    <Binding>
+                        <Binding.ElementName>
+                            ThisWindow
+                        </Binding.ElementName>
+                        <Binding.Path>
+                            ViewModel.Variable
+                        </Binding.Path>
+                        <Binding.Mode>
+                            OneWayToSource
+                        </Binding.Mode>
+                    </Binding>
+                </ComboBox.SelectedItem>
+            </ComboBox>
+            <suggestionBoxLib:SuggestionBox>
+                <Grid.Column>
+                    8
+                </Grid.Column>
+                <Grid.ColumnSpan>
+                    13
+                </Grid.ColumnSpan>
+                <suggestionBoxLib:SuggestionBox.Style>
+                    <Style>
+                        <Style.TargetType>
+                            suggestionBoxLib:SuggestionBox
+                        </Style.TargetType>
+                        <Style.Triggers>
+                            <DataTrigger>
+                                <DataTrigger.Binding>
+                                    <Binding>
+                                        <Binding.ElementName>
+                                            VariableSelector
+                                        </Binding.ElementName>
+                                        <Binding.Path>
+                                            SelectedIndex
+                                        </Binding.Path>
+                                    </Binding>
+                                </DataTrigger.Binding>
+                                <DataTrigger.Value>
+                                    -1
+                                </DataTrigger.Value>
+                                <DataTrigger.Setters>
+                                    <Setter>
+                                        <Setter.Property>
+                                            suggestionBoxLib:SuggestionBox.IsEnabled
+                                        </Setter.Property>
+                                        <Setter.Value>
+                                            False
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger.Setters>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </suggestionBoxLib:SuggestionBox.Style>
+                <suggestionBoxLib:SuggestionBox.Variable>
+                    <Binding>
+                        <Binding.Path>
+                            Variable
+                        </Binding.Path>
+                        <Binding.Mode>
+                            OneWay
+                        </Binding.Mode>
+                    </Binding>
+                </suggestionBoxLib:SuggestionBox.Variable>
+                <suggestionBoxLib:SuggestionBox.Selector>
+                    <Binding>
+                        <Binding.Path>
+                            Selector
+                        </Binding.Path>
+                        <Binding.Mode>
+                            OneWay
+                        </Binding.Mode>
+                    </Binding>
+                </suggestionBoxLib:SuggestionBox.Selector>
+                <suggestionBoxLib:SuggestionBox.Selection>
+                    <Binding>
+                        <Binding.Path>
+                            Selection
+                        </Binding.Path>
+                        <Binding.Mode>
+                            OneWayToSource
+                        </Binding.Mode>
+                    </Binding>
+                </suggestionBoxLib:SuggestionBox.Selection>
+            </suggestionBoxLib:SuggestionBox>
+        </Grid>
+        <Grid>
+            <Grid.Row>
+                5
+            </Grid.Row>
+            <Grid.RowSpan>
+                7
+            </Grid.RowSpan>
+            <ScrollViewer>
+                <ScrollViewer.HorizontalScrollBarVisibility>
+                    Disabled
+                </ScrollViewer.HorizontalScrollBarVisibility>
+                <ScrollViewer.VerticalScrollBarVisibility>
+                    Auto
+                </ScrollViewer.VerticalScrollBarVisibility>
+                <ListView>
+                    <ListView.ItemContainerStyle>
+                        <Style>
+                            <Style.TargetType>
+                                ListViewItem
+                            </Style.TargetType>
+                            <Style.Setters>
+                                <Setter>
+                                    <Setter.Property>
+                                        ListViewItem.Focusable
+                                    </Setter.Property>
+                                    <Setter.Value>
+                                        False
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter>
+                                    <Setter.Property>
+                                        ListViewItem.HorizontalContentAlignment
+                                    </Setter.Property>
+                                    <Setter.Value>
+                                        Stretch
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter>
+                                    <Setter.Property>
+                                        ListViewItem.Template
+                                    </Setter.Property>
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <ControlTemplate.TargetType>
+                                                ListBoxItem
+                                            </ControlTemplate.TargetType>
+                                            <ContentPresenter />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style.Setters>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid>
+                                <UniformGrid.Columns>
+                                    2
+                                </UniformGrid.Columns>
+                                <UniformGrid.VerticalAlignment>
+                                    Top
+                                </UniformGrid.VerticalAlignment>
+                            </UniformGrid>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <DataTemplate.DataType>
+                                wpfApp:LabelValuePair
+                            </DataTemplate.DataType>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label>
+                                    <Grid.Column>
+                                        0
+                                    </Grid.Column>
+                                    <Label.Content>
+                                        <Binding>
+                                            <Binding.Path>
+                                                Label
+                                            </Binding.Path>
+                                        </Binding>
+                                    </Label.Content>
+                                </Label>
+                                <TextBox>
+                                    <Grid.Column>
+                                        1
+                                    </Grid.Column>
+                                    <Grid.ColumnSpan>
+                                        2
+                                    </Grid.ColumnSpan>
+                                    <TextBox.IsReadOnly>
+                                        True
+                                    </TextBox.IsReadOnly>
+                                    <TextBox.VerticalContentAlignment>
+                                        Center
+                                    </TextBox.VerticalContentAlignment>
+                                    <TextBox.Text>
+                                        <Binding>
+                                            <Binding.Path>
+                                                Value
+                                            </Binding.Path>
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsSource>
+                        <Binding>
+                            <Binding.Path>
+                                ResultsItemsSource
+                            </Binding.Path>
+                        </Binding>
+                    </ListView.ItemsSource>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+        <Grid>
+            <Grid.Row>
+                13
+            </Grid.Row>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button>
+                    <Grid.Column>
+                        1
+                    </Grid.Column>
+                    <Grid.ColumnSpan>
+                        2
+                    </Grid.ColumnSpan>
+                    <!-- <Button.Style> -->
+                    <!--     <Style> -->
+                    <!--         <Style.TargetType> -->
+                    <!--             Button -->
+                    <!--         </Style.TargetType> -->
+                    <!--         <Style.Triggers> -->
+                    <!--             <DataTrigger> -->
+                    <!--                 <DataTrigger.Binding> -->
+                    <!--                     <Binding> -->
+                    <!--                         <Binding.Path> -->
+                    <!--                             HasPreviousResult -->
+                    <!--                         </Binding.Path> -->
+                    <!--                     </Binding> -->
+                    <!--                 </DataTrigger.Binding> -->
+                    <!--                 <DataTrigger.Value> -->
+                    <!--                     False -->
+                    <!--                 </DataTrigger.Value> -->
+                    <!--                 <DataTrigger.Setters> -->
+                    <!--                     <Setter> -->
+                    <!--                         <Setter.Property> -->
+                    <!--                             Button.IsEnabled -->
+                    <!--                         </Setter.Property> -->
+                    <!--                         <Setter.Value> -->
+                    <!--                             False -->
+                    <!--                         </Setter.Value> -->
+                    <!--                     </Setter> -->
+                    <!--                 </DataTrigger.Setters> -->
+                    <!--             </DataTrigger> -->
+                    <!--         </Style.Triggers> -->
+                    <!--     </Style> -->
+                    <!-- </Button.Style> -->
+                    <Button.Command>
+                        <Binding>
+                            <Binding.ElementName>
+                                ThisWindow
+                            </Binding.ElementName>
+                            <Binding.Path>
+                                ChangeResultCommand
+                            </Binding.Path>
+                        </Binding>
+                    </Button.Command>
+                    <Button.CommandParameter>
+                        <system:Boolean>
+                            False
+                        </system:Boolean>
+                    </Button.CommandParameter>
+                    <Button.Content>
+                        <Label>
+                            <Label.FontSize>
+                                12
+                            </Label.FontSize>
+                            <Label.Content>
+                                Previous
+                            </Label.Content>
+                            <Label.FontWeight>
+                                DemiBold
+                            </Label.FontWeight>
+                        </Label>
+                    </Button.Content>
+                </Button>
+                <Button>
+                    <Grid.Column>
+                        4
+                    </Grid.Column>
+                    <Grid.ColumnSpan>
+                        2
+                    </Grid.ColumnSpan>
+                    <!-- <Button.Style> -->
+                    <!--     <Style> -->
+                    <!--         <Style.TargetType> -->
+                    <!--             Button -->
+                    <!--         </Style.TargetType> -->
+                    <!--         <Style.Triggers> -->
+                    <!--             <DataTrigger> -->
+                    <!--                 <DataTrigger.Binding> -->
+                    <!--                     <Binding> -->
+                    <!--                         <Binding.Path> -->
+                    <!--                             HasNextResult -->
+                    <!--                         </Binding.Path> -->
+                    <!--                     </Binding> -->
+                    <!--                 </DataTrigger.Binding> -->
+                    <!--                 <DataTrigger.Value> -->
+                    <!--                     False -->
+                    <!--                 </DataTrigger.Value> -->
+                    <!--                 <DataTrigger.Setters> -->
+                    <!--                     <Setter> -->
+                    <!--                         <Setter.Property> -->
+                    <!--                             Button.IsEnabled -->
+                    <!--                         </Setter.Property> -->
+                    <!--                         <Setter.Value> -->
+                    <!--                             False -->
+                    <!--                         </Setter.Value> -->
+                    <!--                     </Setter> -->
+                    <!--                 </DataTrigger.Setters> -->
+                    <!--             </DataTrigger> -->
+                    <!--         </Style.Triggers> -->
+                    <!--     </Style> -->
+                    <!-- </Button.Style> -->
+                    <Button.Command>
+                        <Binding>
+                            <Binding.ElementName>
+                                ThisWindow
+                            </Binding.ElementName>
+                            <Binding.Path>
+                                ChangeResultCommand
+                            </Binding.Path>
+                        </Binding>
+                    </Button.Command>
+                    <Button.CommandParameter>
+                        <system:Boolean>
+                            True
+                        </system:Boolean>
+                    </Button.CommandParameter>
+                    <Button.Content>
+                        <Label>
+                            <Label.FontSize>
+                                12
+                            </Label.FontSize>
+                            <Label.Content>
+                                Next
+                            </Label.Content>
+                            <Label.FontWeight>
+                                DemiBold
+                            </Label.FontWeight>
+                        </Label>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
