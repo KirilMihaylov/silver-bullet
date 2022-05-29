@@ -30,6 +30,8 @@ public class SelectionMadeCommand : ICommand
         _selectionMade.SelectionMade(parameter);
     }
 
+    #pragma warning disable 67
     /// <inheritdoc />
     public event EventHandler? CanExecuteChanged;
+    #pragma warning restore 67
 }
