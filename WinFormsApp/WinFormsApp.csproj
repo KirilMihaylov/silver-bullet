@@ -6,10 +6,8 @@
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
         <TargetFramework>net6.0-windows</TargetFramework>
-    </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+        <Configurations>Release;Debug</Configurations>
+        <Platforms>x64</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,9 +20,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\BookshelfDB\BookshelfDB.csproj"/>
-        <ProjectReference Include="..\SuggestionBox\SuggestionBox.csproj"/>
-        <ProjectReference Include="..\ViewModels\ViewModels.csproj"/>
+        <ProjectReference Include="..\BookshelfDB\BookshelfDB.csproj" />
+        <ProjectReference Include="..\SuggestionBox\SuggestionBox.csproj" />
+        <ProjectReference Include="..\ViewModels\ViewModels.csproj" />
     </ItemGroup>
 
 </Project>
