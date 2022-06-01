@@ -6,7 +6,7 @@ internal static class SilverBulletContext
 
     static SilverBulletContext()
     {
-        Context.Suggestions.Load();
+        Context.Database.EnsureCreated();
     }
 }
 
